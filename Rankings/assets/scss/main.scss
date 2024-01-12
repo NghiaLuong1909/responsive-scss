@@ -1,0 +1,1389 @@
+$bgColor: #2b2b2b;
+$color: #fff;
+$btnColor: #A259FF;
+$foreignColor: #ccc;
+$res_768_1199: "only screen and (min-width: 768px) and (max-width: 1199px)";
+$res_767: "only screen and (max-width: 767px)";
+@mixin responsiveTablet(){
+    @media #{$res_768_1199}{
+        @content;
+    }
+}
+@mixin responsiveMobile(){
+    @media #{$res_767}{
+        @content;
+    }
+}
+@mixin btn($display, $height, $gap){
+    display: $display;
+    height: $height;
+    gap: $gap;
+}
+@font-face {
+    font-family: WorkSans;
+    src: url(../font/WorkSans-Medium.otf);
+}
+@font-face {
+    font-family: WorkSansThin;
+    src: url(../font/WorkSans-Thin.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: WorkSans;
+}
+body{
+    background: $bgColor;
+}
+.main{
+    min-width: max-content;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: auto;
+        @include responsiveTablet(){
+            display: flex;
+            width: 100%;
+            margin: auto;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        @include responsiveMobile(){
+            display: flex;
+            width: 100%;
+            margin: auto;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .header{
+            display: flex;
+            padding: 20px 50px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            @include responsiveTablet(){
+                display: flex;
+                padding: 15px 50px;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+            }
+            @include responsiveMobile(){
+                display: flex;
+                padding: 15px 30px;
+                justify-content: space-between;
+                align-items: center;
+                align-self: stretch;
+            }
+            .header-left{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .header-right{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 10px;
+                .header__item-link{
+                    display: flex;
+                    height: 46px;
+                    padding: 0px 20px;
+                    justify-content: center;
+                    align-items: center;
+                    @include responsiveTablet(){
+                        display: none;
+                    }
+                    @include responsiveMobile(){
+                        display: none;
+                    }
+                    .item{
+                        text-decoration: none;
+                        color: $color;
+                        text-align: center;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 140%;
+                    }
+                    .btn-signup{
+                        @include btn(flex, 60px, 12px);
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 20px;
+                        background-color: #A259FF;
+                    }
+                }
+                .burger-menu{
+                    display: none;
+                    @include responsiveTablet(){
+                        display: block;
+                    }
+                    @include responsiveMobile(){
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .heading{
+            display: flex;
+            padding: 80px 0px;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            align-self: stretch;
+            @include responsiveTablet(){
+                display: flex;
+                padding: 40px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                align-self: stretch;
+            }
+            @include responsiveMobile(){
+                display: flex;
+                padding: 30px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                align-self: stretch;
+            }
+            .content{
+                display: flex;
+                width: 1050px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                @include responsiveTablet(){
+                    display: flex;
+                    width: 690px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+                @include responsiveMobile(){
+                    display: flex;
+                    width: 315px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+                .title{
+                    flex: 1;
+                    color: $color;
+                    font-size: 40px;
+                    line-height: 110%;
+                    text-transform: capitalize;
+                    @include responsiveTablet(){
+                        flex: 1;
+                        color: $color;
+                        font-size: 28px;
+                        line-height: 160%;
+                        text-transform: capitalize;
+                    }
+                    @include responsiveMobile(){
+                        flex: 1;
+                        color: $color;
+                        font-size: 22px;
+                        line-height: 160%;
+                        text-transform: capitalize;
+                    }
+                }
+                .description{
+                    align-self: stretch;
+                    color: $color;
+                    font-size: 22px;
+                    line-height: 160%;
+                    @include responsiveTablet(){
+                        align-self: stretch;
+                        color: $color;
+                        font-size: 16px;
+                        line-height: 140%;
+                    }
+                    @include responsiveMobile(){
+                        align-self: stretch;
+                        color: $color;
+                        font-size: 16px;
+                        line-height: 160%;
+                    }
+                }
+            }
+        }
+        .timing{
+            display: flex;
+            padding: 0px 10px;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            align-self: stretch;
+            @include responsiveTablet(){
+                display: flex;
+                padding: 0px 10px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+            }
+            @include responsiveMobile(){
+                display: flex;
+                padding: 0px 10px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+            }
+            .timing-list{
+                display: flex;
+                width: 1050px;
+                align-items: flex-start;
+                @include responsiveTablet(){
+                    display: flex;
+                    width: 680px;
+                    align-items: flex-start;
+                }
+                @include responsiveMobile(){
+                    display: flex;
+                    width: 315px;
+                    align-items: flex-start;
+                }
+                .timing-day{
+                    display: flex;
+                    width: 25%;
+                    height: 60px;
+                    padding: 0px 30px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 16px;
+                    border-bottom: 2px solid $foreignColor;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                        border-bottom: 2px solid $foreignColor;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    .timing-day-content{
+                        color: $color;
+                        text-align: center;
+                        font-size: 22px;
+                        line-height: 140%;
+                        text-transform: capitalize;
+                        @include responsiveTablet(){
+                            color: $color;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                        }
+                        .timing-day-content-first{
+                            display: block;
+                            @include responsiveMobile(){
+                                display: none;
+                            }
+                            
+                        }
+                        .timing-day-content-second{
+                            display: none;
+                            @include responsiveMobile(){
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .timing-week{
+                    display: flex;
+                    width: 25%;
+                    height: 60px;
+                    padding: 0px 30px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 16px;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    .timing-week-content{
+                        color: $foreignColor;
+                        text-align: center;
+                        font-size: 22px;
+                        line-height: 140%;
+                        text-transform: capitalize;
+                        @include responsiveTablet(){
+                            color: $foreignColor;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                        }
+                        .timing-week-content-first{
+                            display: block;
+                            @include responsiveMobile(){
+                                display: none;
+                            }
+                        }
+                        .timing-week-content-second{
+                            display: none;
+                            @include responsiveMobile(){
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .timing-month{
+                    display: flex;
+                    width: 25%;
+                    height: 60px;
+                    padding: 0px 30px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 16px;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    .timing-month-content{
+                        color: $foreignColor;
+                        text-align: center;
+                        font-size: 22px;
+                        line-height: 140%;
+                        text-transform: capitalize;
+                        @include responsiveTablet(){
+                            color: $foreignColor;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                        }
+                        .timing-month-content-first{
+                            display: block;
+                            @include responsiveMobile(){
+                                display:  none;
+                            }
+                        }
+                        .timing-month-content-second{
+                            display: none;
+                            @include responsiveMobile(){
+                                display: block;
+                            }
+                        }
+                    }
+                }
+                .timing-all-time{
+                    display: flex;
+                    width: 25%;
+                    height: 60px;
+                    padding: 0px 30px;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 16px;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 25%;
+                        height: 60px;
+                        padding: 0px 30px;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 16px;
+                    }
+                    .timing-all-time-content{
+                        color: $foreignColor;
+                        text-align: center;
+                        font-size: 22px;
+                        line-height: 140%;
+                        text-transform: capitalize;
+                        @include responsiveTablet(){
+                            color: $foreignColor;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                        }
+                        @include responsiveMobile(){
+                            color: $foreignColor;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+        }
+        .ranking{
+            display: flex;
+            padding: 40px 0px;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            align-self: stretch;
+            @include responsiveTablet(){
+                display: flex;
+                padding: 40px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                align-self: stretch;
+            }
+            @include responsiveMobile(){
+                display: flex;
+                padding: 40px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                align-self: stretch;
+            }
+            .ranking-heading{
+                display: flex;
+                width: 1050px;
+                height: 46px;
+                padding: 12px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                border-radius: 20px;
+                border: 1px solid #3b3b3b;
+                @include responsiveTablet(){
+                    display: flex;
+                    width: 690px;
+                    padding: 12px 0px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 20px;
+                    background: #3b3b3b;
+                }
+                @include responsiveMobile(){
+                    display: flex;
+                    width: 315px;
+                    padding: 12px 0px;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 20px;
+                    border: 1px solid #3b3b3b;
+                }
+                .ranking-heading-content{
+                    display: flex;
+                    width: 1050px;
+                    padding: 0px 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 690px;
+                        padding: 0px 20px;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 315px;
+                        padding: 0px 10px;
+                        align-items: center;
+                    }
+                    .ranking-heading-left{
+                        display: flex;
+                        width: 430px;
+                        align-items: center;
+                        gap: 20px;
+                        flex-shrink: 0;
+                        @include responsiveTablet(){
+                            display: flex;
+                            width: 430px;
+                            align-items: center;
+                            gap: 20px;
+                            flex-shrink: 0;
+                        }
+                        @include responsiveMobile(){
+                            display: flex;
+                            width: 215px;
+                            align-items: center;
+                            gap: 10px;
+                            flex-shrink: 0;
+                        }
+                        .ranking-heading-tab{
+                            width: 30px;
+                            flex-shrink: 0;
+                            color: #858585;
+                            text-align: center;
+                            font-size: 16px;
+                            line-height: 140%;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                width: 30px;
+                                flex-shrink: 0;
+                                color: #858585;
+                                text-align: center;
+                                font-size: 16px;
+                                line-height: 140%;
+                            }
+                            @include responsiveMobile(){
+                                width: 24px;
+                                flex-shrink: 0;
+                                color: #858585;
+                                text-align: center;
+                                font-size: 16px;
+                                line-height: 140%;
+                            }
+                        }
+                        .ranking-heading-artist{
+                            color: #858585;
+                            font-size: 16px;
+                            line-height: 140%;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                color: #858585;
+                                font-size: 16px;
+                                line-height: 140%;
+                                font-family: WorkSansThin;
+                            }
+                            @include responsiveMobile(){
+                                flex: 1;
+                                color: #858585;
+                                font-size: 12px;
+                                line-height: 110%;
+                                font-family: WorkSansThin;
+                            }
+                        }
+                    }
+                    .ranking-heading-right{
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 20px;
+                        @include responsiveTablet(){
+                            display: flex;
+                            justify-content: flex-end;
+                            align-items: center;
+                            gap: 20px;
+                        }
+                        .ranking-heading-change{
+                            align-self: stretch;
+                            width: 160px;
+                            color: #858585;
+                            font-size: 16px;
+                            line-height: 140%;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                align-self: stretch;
+                                width: 100px;
+                                color: #858585;
+                                font-size: 16px;
+                                line-height: 140%;
+                                font-family: WorkSansThin;
+                            }
+                            @include responsiveMobile(){
+                                display: none;
+                            }
+                        }
+                        .ranking-heading-sold{
+                            align-self: stretch;
+                            width: 160px;
+                            color: #858585;
+                            font-size: 16px;
+                            line-height: 140%;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                display:  none;
+                            }
+                            @include responsiveMobile(){
+                                display: none;
+                            }
+                        }
+                        .ranking-heading-volume{
+                            align-self: stretch;
+                            width: 160px;
+                            color: #858585;
+                            font-size: 16px;
+                            line-height: 140%;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                align-self: stretch;
+                                width: 100px;
+                                color: #858585;
+                                font-size: 16px;
+                                line-height: 140%;
+                                font-family: WorkSansThin;
+                            }
+                            @include responsiveMobile(){
+                                align-self: stretch;
+                                color: #858585;
+                                font-size: 12px;
+                                line-height: 110%;
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .ranking-item{
+                display: flex;
+                width: 1050px;
+                padding: 12px 0px;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                border-radius: 20px;
+                background: #3b3b3b;
+                @include responsiveTablet(){
+                    display: flex;
+                    width: 690px;
+                    height: 60px;
+                    padding: 12px 0px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border-radius: 20px;
+                    background: #3b3b3b;
+                }
+                @include responsiveMobile(){
+                    display: flex;
+                    width: 315px;
+                    height: 50px;
+                    padding: 12px 0px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    border: 1px solid #3b3b3b;
+                    border-radius: 20px;
+                }
+                .ranking-item-content{
+                    display: flex;
+                    width: 1050px;
+                    padding: 0px 20px;
+                    justify-content: space-between;
+                    align-items: center;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 690px;
+                        padding: 0px 20px;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 315px;
+                        padding: 0px 10px;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                    .ranking-item-left{
+                        display: flex;
+                        width: 430px;
+                        align-items: center;
+                        gap: 20px;
+                        flex-shrink: 0;
+                        @include responsiveTablet(){
+                            display: flex;
+                            width: 410px;
+                            align-items: center;
+                            gap: 20px;
+                            flex-shrink: 0;
+                        }
+                        @include responsiveMobile(){
+                            display: flex;
+                            width: 210px;
+                            align-items: center;
+                            gap: 10px;
+                            flex-shrink: 0;
+                        }
+                        .ranking-item-tab{
+                            position: relative;
+                            display: flex;
+                            width: 30px;
+                            height: 30px;
+                            align-items: flex-start;
+                            gap: 10px;
+                            flex-shrink: 0;
+                            border-radius: 20px;
+                            background: $bgColor;
+                            @include responsiveTablet(){
+                                position: relative;
+                                display: flex;
+                                width: 24px;
+                                height: 24px;
+                                justify-content: center;
+                                align-items: center;
+                                flex-shrink: 0;
+                                border-radius: 20px;
+                                background: $bgColor;
+                            }
+                            @include responsiveMobile(){
+                                position: relative;
+                                display: flex;
+                                width: 24px;
+                                height: 24px;
+                                align-items: flex-start;
+                                gap: 10px;
+                                flex-shrink: 0;
+                                background: none;
+                            }
+                            .ranking-item-tab-content{
+                                position: absolute;
+                                top: 4px;
+                                left: 10px;
+                                color: #858585;
+                                text-align: center;
+                                font-size: 16px;
+                                line-height: 140%;
+                                text-transform: capitalize;
+                                @include responsiveTablet(){
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 7px;
+                                    color: #858585;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    line-height: 140%;
+                                    text-transform: capitalize;
+                                }
+                                @include responsiveMobile(){
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 7px;
+                                    color: #858584;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    line-height: 140%;
+                                    text-transform: capitalize;
+                                }
+                            }
+                            .ranking-item-tab-content-plus{
+                                position: absolute;
+                                top: 4px;
+                                left: 7px;
+                                color: #858585;
+                                text-align: center;
+                                font-size: 16px;
+                                line-height: 140%;
+                                text-transform: capitalize;
+                                @include responsiveTablet(){
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 4px;
+                                    color: #858585;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    line-height: 140%;
+                                    text-transform: capitalize;
+                                }
+                                @include responsiveMobile(){
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 3px;
+                                    color: #858584;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    line-height: 140%;
+                                    text-transform: capitalize;
+                                }
+                            }
+                        }
+                        .ranking-item-artist{
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                            flex: 1;
+                            @include responsiveTablet(){
+                                display: flex;
+                                width: 240px;
+                                align-items: center;
+                                gap: 12px;
+                                flex-shrink: 0;
+                                img{
+                                    display: flex;
+                                    width: 32px;
+                                    height: 32px;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                            @include responsiveMobile(){
+                                display: flex;
+                                width: 167px;
+                                align-items: center;
+                                gap: 12px;
+                                img{
+                                    display: flex;
+                                    width: 24px;
+                                    height: 24px;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                            .ranking-item-artist-content{
+                                color: $color;
+                                font-size: 22px;
+                                line-height: 140%;
+                                text-transform: capitalize;
+                                @include responsiveTablet(){
+                                    flex: 1;
+                                    color: $color;
+                                    font-size: 16px;
+                                    line-height: 140%;
+                                    text-transform: capitalize;
+                                }
+                                @include responsiveMobile(){
+                                    width: 110px;
+                                    color: $color;
+                                    font-size: 8px;
+                                    line-height: 110%;
+                                    text-transform: capitalize;
+                                }
+                            }
+                        }
+                    }
+                    .ranking-item-right{
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: center;
+                        gap: 20px;
+                        .ranking-item-changing{
+                            align-self: stretch;
+                            width: 160px;
+                            color: #00AC4F;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                align-self: stretch;
+                                width: 100px;
+                                color: #00AC4F;
+                                font-size: 16px;
+                                line-height: 140%;
+                                text-transform: capitalize;
+                                font-family: WorkSansThin;
+                            }
+                            @include responsiveMobile(){
+                                display: none;
+                            }
+                        }
+                        .ranking-item-sold{
+                            align-self: stretch;
+                            width: 160px;
+                            color: $color;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                display:  none;
+                            }
+                            @include responsiveMobile(){
+                                display: none;
+                            }
+                        }
+                        .ranking-item-volume{
+                            align-self: stretch;
+                            width: 160px;
+                            color: $color;
+                            font-size: 16px;
+                            line-height: 140%;
+                            text-transform: capitalize;
+                            font-family: WorkSansThin;
+                            @include responsiveTablet(){
+                                align-self: stretch;
+                                width: 100px;
+                                color: $color;
+                                font-size: 16px;
+                                line-height: 140%;
+                                text-transform: capitalize;
+                                font-family: WorkSansThin;
+                            }
+                            @include responsiveMobile(){
+                                align-self: stretch;
+                                width: 80px;
+                                color: $color;
+                                font-size: 12px;
+                                line-height: 110%;
+                                text-transform: capitalize;
+                                font-family: WorkSansThin;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer{
+            display: flex;
+            padding: 40px 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            align-self: stretch;
+            background: #3B3B3B;
+            @include responsiveTablet(){
+                display: flex;
+                padding: 40px 0;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+                align-self: stretch;
+                background: #3B3B3B;
+            }
+            @include responsiveMobile(){
+                display: flex;
+                padding: 40px 0;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                align-self: stretch;
+            }
+            .footer__top{
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                @include responsiveTablet(){
+                    display: flex;
+                    width: 690px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 30px;
+                }
+                @include responsiveMobile(){
+                    display: flex;
+                    width: 80%;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 30px;
+                    padding-bottom: 80px;
+                }
+                .footer__top-first{
+                    display: flex;
+                    width: 327.414px;
+                    padding-right: 84px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 30px;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        align-self: stretch;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        align-self: stretch;
+                    }
+                    .footer__top-first-content{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        @include responsiveTablet(){
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 20px;
+                            align-self: stretch;
+                        }
+                        @include responsiveMobile(){
+                            display: flex;
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 20px;
+                            align-self: stretch;
+                        }
+                        .footer__top-first-content-des{
+                            width: 238px;
+                            color: $foreignColor;
+                            font-size: 16px;
+                            line-height: 140%;
+                            @include responsiveTablet(){
+                                align-self: stretch;
+                                width: 690px;
+                                color: $foreignColor;
+                                font-size: 16px;
+                                line-height: 140%;
+                            }
+                            @include responsiveMobile(){
+                                align-self: stretch;
+                                width: 100%;
+                                color: $foreignColor;
+                                font-size: 20px;
+                                line-height: 140%;
+                            }
+                        }
+                        .footer__top-first-content-contact{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 15px;
+                            @include responsiveTablet(){
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 15px;
+                                align-self: stretch;
+                            }
+                            @include responsiveMobile(){
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 25px;
+                                align-self: stretch;
+                            }
+                            .footer__top-first-content-contact-caption{
+                                width: 238px;
+                                height: 18px;
+                                color: $foreignColor;
+                                font-size: 16px;
+                                line-height: 140%;
+                                @include responsiveTablet(){
+                                    align-self: stretch;
+                                    width: 690px;
+                                    height: 22px;
+                                    color: $foreignColor;
+                                    font-size: 16px;
+                                    line-height: 140%;   
+                                }
+                                @include responsiveMobile(){
+                                    align-self: stretch;
+                                    width: 100%;
+                                    font-size: 22px;
+                                    color: $foreignColor;
+                                    line-height: 140%;
+                                }
+                            }
+                            .footer__top-first-content-app{
+                                display: flex;
+                                align-items: flex-start;
+                                gap: 10px;
+                            }
+                        }
+                    }
+                }
+                .footer__top-second{
+                    display: flex;
+                    width: 240px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 25px;
+                    @include responsiveTablet(){
+                        display: flex;
+                        width: 690px;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        align-self: stretch;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        align-self: stretch;
+                    }
+                    .footer__top-second-heading{
+                        color: $color;
+                        font-size: 22px;
+                        line-height: 160%;
+                        text-transform: capitalize;
+                        @include responsiveMobile(){
+                            align-self: stretch;
+                            color: $color;
+                            font-size: 28px;
+                            line-height: 160%;
+                            text-transform: capitalize;
+                        }
+                    }
+                    .footer__top-second-content{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        @include responsiveMobile(){
+                            display: flex;
+                            width: 100%;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 20px;
+                            align-self: stretch;
+                        }
+                        .footer__top-second-content-item{
+                            color: $foreignColor;
+                            font-size: 16px;
+                            line-height: 140%;
+                            @include responsiveMobile(){
+                                display: flex;
+                                font-size: 20px;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                gap: 20px;
+                                align-self: stretch;    
+                            }
+                        }
+                    }
+                }
+                .footer__top-third{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 25px;
+                    @include responsiveTablet(){
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        align-self: stretch;
+                    }
+                    @include responsiveMobile(){
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        align-self: stretch;   
+                    }
+                    .footer__top-third-heading{
+                        color: $color;
+                        font-size: 22px;
+                        line-height: 160%;
+                        text-transform: capitalize;
+                        @include responsiveTablet(){
+                            align-self: stretch;
+                            color: $color;
+                            font-size: 22px;
+                            line-height: 160%;
+                            text-transform: capitalize;
+                        }
+                        @include responsiveMobile(){
+                            align-self: stretch;
+                            color: $color;
+                            font-size: 28px;
+                            line-height: 160%;
+                            text-transform: capitalize;
+                        }
+                    }
+                    .footer__top-third-content{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        gap: 20px;
+                        @include responsiveTablet(){
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 20px;
+                            align-self: stretch;
+                        }
+                        @include responsiveMobile(){
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 20px;
+                            align-self: stretch;
+                        }
+                        .footer__top-third-content-des{
+                            width: 330px;
+                            color: $foreignColor;
+                            font-size: 16px;
+                            line-height: 140%;
+                            @include responsiveTablet(){
+                                width: 690px;
+                                color: $foreignColor;
+                                font-size: 16px;
+                                line-height: 140%;
+                                align-self: stretch;
+                            }
+                            @include responsiveMobile(){
+                                width: 100%;
+                                color: $foreignColor;
+                                font-size: 22px;
+                                line-height: 140%;
+                                align-self: stretch;
+                            }
+                        }
+                        .footer__top-third-content-form{
+                            display: flex;
+                            height: 60px;
+                            padding: 16px 0px 16px 20px;
+                            align-items: center;
+                            gap: 12px;
+                            align-self: stretch;
+                            border-radius: 20px;
+                            background: #fff;
+                            @include responsiveTablet(){
+                                display: flex;
+                                width: 420px;
+                                height: 60px;
+                                padding: 16px 0px 16px 20px;
+                                align-items: center;
+                                gap: 12px;
+                                border-radius: 20px;
+                                background: #fff;
+                            }
+                            @include responsiveMobile(){
+                                width: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 16px;
+                                background: none;
+                                padding: 0;
+                            }
+                            input{
+                                flex: 1;
+                                color: #2b2b2b;
+                                font-size: 16px;
+                                line-height: 140%;
+                                border: none;
+                                outline: none;
+                                @include responsiveMobile(){
+                                    // flex: 1;
+                                    width: 100%;
+                                    padding: 12px 0 12px 12px;
+                                    border-radius: 20px;
+                                    color: #2b2b2b;
+                                    font-size: 22px;
+                                    font-weight: 400px;
+                                    line-height: 140%;
+                                    border: none;
+                                    outline: none;
+                                }
+                            }
+                            .footer__top-third-content-form-subscribe{
+                                @include btn(flex, 60px, 12px);
+                                text-decoration: none;
+                                padding: 0px 50px;
+                                justify-content: flex-end;
+                                align-items: center;
+                                border-radius: 20px;
+                                background-color: $btnColor;
+                                font-size: 16px;
+                                color: $color;
+                                font-weight: 600;
+                                line-height: 140%;
+                                text-align: center;
+                                @include responsiveMobile(){
+                                    text-decoration: none;
+                                    display: flex;
+                                    width: 100%;
+                                    padding: 12px 50px;
+                                    justify-content: center;
+                                    align-items: center;
+                                    gap: 12px;
+                                    border-radius: 20px;
+                                    background-color: #A259FF;
+                                    font-size: 22px;
+                                    color: #fff;
+                                    font-weight: 600px;
+                                    line-height: 140%;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .footer__bottom{
+                display: flex;
+                width: 1050px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                @include responsiveTablet(){
+                    display: flex;
+                    width: 690px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+                @include responsiveMobile(){
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 20px;
+                }
+                .footer__bottom-border{
+                    background: #ccc;
+                    width: 1050px;
+                    height: 1px;
+                    @include responsiveTablet(){
+                        width: 690px;
+                    }
+                    @include responsiveMobile(){
+                        width: 100%;
+                    }
+                }
+                .footer__bottom-content{
+                    align-self: stretch;
+                    color: $foreignColor;
+                    font-size: 12px;
+                    line-height: 110%;
+                    @include responsiveMobile(){
+                        align-self: stretch;
+                        color: $foreignColor;
+                        font-size: 22px;
+                        line-height: 110%;   
+                    }
+                }
+            }
+        }
+    }
+}
